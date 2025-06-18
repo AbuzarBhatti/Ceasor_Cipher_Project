@@ -1,5 +1,5 @@
+shifted_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 listed_alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-listed_alphabets1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 try_again = 'yes'
 
@@ -20,11 +20,11 @@ while try_again.lower() == 'yes':
                         shift_number = 1
 
                 for x in range(26):
-                    listed_alphabets[x] = listed_alphabets1[(x + shift_number) % 26]
+                    shifted_list[x] = listed_alphabets[(x + shift_number) % 26]
 
                 for y in message:
-                    index_of_letter = listed_alphabets.index(y)
-                    encrypted_message.append(listed_alphabets1[index_of_letter])
+                    index_of_letter = shifted_list.index(y)
+                    encrypted_message.append(listed_alphabets[index_of_letter])
 
                 print(''.join(encrypted_message))
 
@@ -40,11 +40,11 @@ while try_again.lower() == 'yes':
                     else:
                         shift_number = 1
                 for x in range(26):
-                    listed_alphabets[x] = listed_alphabets1[(x + shift_number) % 26]
+                    shifted_list[x] = listed_alphabets[(x + shift_number) % 26]
 
                 for y in message:
-                    index_of_letter = listed_alphabets1.index(y)
-                    decrypted_message.append(listed_alphabets[index_of_letter])
+                    index_of_letter = listed_alphabets.index(y)
+                    decrypted_message.append(shifted_list[index_of_letter])
 
                 print(''.join(decrypted_message))
 
